@@ -9,9 +9,15 @@
 # the total inches of rainfall, and the average rainfall per month for the entire period.
 
 def main():
-    ######################
-    # WRITE YOUR CODE HERE
-    ######################    
+    # Repeat 5 times
+    years = int(input("How many years: "))
+    for i in range(years):
+        print("Outer Debug loop #", i + 1)
+        for j in range(12):
+            print("Month loop #", i + 1)
+            rainfall = input("Rainfall in the", i + 1, "Month: ")
+
+
 
 
 if __name__ == '__main__':
