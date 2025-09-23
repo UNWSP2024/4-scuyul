@@ -1,0 +1,28 @@
+START
+
+    PROMPT "Enter the amount budgeted for this month: "
+    READ budget
+
+    SET total_expenses = 0
+
+    PROMPT "Enter an expense (leave blank to finish): "
+    READ expense
+
+    WHILE expense is not blank
+        CONVERT expense to number
+        total_expenses = total_expenses + expense
+        PROMPT "Enter another expense (leave blank to finish): "
+        READ expense
+    END WHILE
+
+    DISPLAY "Total expenses: ", total_expenses
+
+    IF total_expenses > budget THEN
+        DISPLAY "You are over budget by ", total_expenses - budget
+    ELSE IF total_expenses < budget THEN
+        DISPLAY "You are under budget by ", budget - total_expenses
+    ELSE
+        DISPLAY "You are exactly on budget!"
+    END IF
+
+END
